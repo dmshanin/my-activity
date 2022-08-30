@@ -1,11 +1,10 @@
 import { useState } from 'react';
-import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
-import RestoreIcon from '@mui/icons-material/Restore';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
+import CasinoIcon from '@mui/icons-material/Casino';
+import ListAltIcon from '@mui/icons-material/ListAlt';
+import AnnouncementIcon from '@mui/icons-material/Announcement';
 import AppBar from '@/components/AppBar';
 import Stack from '@mui/material/Stack';
 
@@ -18,29 +17,36 @@ const Layout = ({ children }) => {
         spacing={{ xs: 2 }}
         sx={{
             height: '100%',
-            pb: 2
+            pb: 2,
+            backgroundColor: 'rgb(245, 245, 245)'
         }}
     >
         <AppBar />
         
         <Box sx={{ 
             flexGrow: 1,
-            px: 3
+            px: 3,
+            backgroundColor: "rgb(255, 255, 255)"
         }}>
             {children}
         </Box>
         
-        <BottomNavigation
-            showLabels
-            value={value}
-            onChange={(event, newValue) => {
-                setValue(newValue);
-            }}
-        >
-            <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
-            <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
-            <BottomNavigationAction label="Nearby" icon={<LocationOnIcon />} />
-        </BottomNavigation>
+        <Box sx={{
+            px: 2
+        }}>
+            <BottomNavigation
+                showLabels
+                value={value}
+                onChange={(event, newValue) => {
+                    setValue(newValue);
+                }}
+                sx={{backgroundColor: "rgb(255, 255, 255)"}}
+            >
+                <BottomNavigationAction label="Случайно" icon={<CasinoIcon />} />
+                <BottomNavigationAction label="План" icon={<ListAltIcon />} />
+                <BottomNavigationAction label="Что нового" icon={<AnnouncementIcon />} />
+            </BottomNavigation>
+        </Box>
     </Stack>
   );
 };
