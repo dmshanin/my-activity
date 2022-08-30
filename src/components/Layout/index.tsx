@@ -17,7 +17,8 @@ const Layout = ({ children }) => {
         direction={{ xs: 'column' }}
         spacing={{ xs: 2 }}
         sx={{
-            height: '100%'
+            height: '100%',
+            pb: 2
         }}
     >
         <AppBar />
