@@ -1,4 +1,5 @@
 import * as React from 'react';
+import PropTypes from 'prop-types';
 import Head from 'next/head';
 import { AppProps } from 'next/app';
 import { ThemeProvider } from '@mui/material/styles';
@@ -54,3 +55,9 @@ export default function MyApp(props: MyAppProps) {
     </CacheProvider>
   );
 }
+
+MyApp.propTypes = {
+  Component: PropTypes.elementType.isRequired,
+  emotionCache: PropTypes.object,
+  pageProps: PropTypes.object.isRequired,
+};
