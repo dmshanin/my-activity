@@ -85,7 +85,7 @@ const Plan: NextPage = () => {
                         variant="contained"
                         onClick={fetchActivityList}
                     >
-                        Еще!
+                        More!
                     </Button>
                 </Stack>
             )}
