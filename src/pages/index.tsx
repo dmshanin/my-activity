@@ -59,7 +59,7 @@ const Home: NextPage = () => {
 					}}
 				>
 					<Typography
-						variant="h4"
+						variant="h5"
 						gutterBottom
 						align="center"
 					>
@@ -69,11 +69,11 @@ const Home: NextPage = () => {
 								href={`${data.link}`}
 								target="_blank"
 								sx={{
-									ml: 2,
+									ml: 1,
 									verticalAlign: 'super'
 								}}
 							>
-								<OpenInNewIcon />
+								<OpenInNewIcon sx={{ fontSize: 14 }} />
 							</Link>
 						)}
 					</Typography>

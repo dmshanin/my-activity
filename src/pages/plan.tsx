@@ -60,7 +60,7 @@ const Plan: NextPage = () => {
                     {data.map((item, index, arr) => (
                         <Typography
                             key={item.key}
-                            variant="h5"
+                            variant="h7"
                             gutterBottom
                             align="center"
                         >
@@ -71,11 +71,11 @@ const Plan: NextPage = () => {
                                     href={`${item.link}`}
                                     target="_blank"
                                     sx={{
-                                        ml: 2,
+                                        ml: 1,
                                         verticalAlign: 'super'
                                     }}
                                 >
-                                    <OpenInNewIcon />
+                                    <OpenInNewIcon sx={{ fontSize: 14 }} />
                                 </Link>
                             )}
                         </Typography>
