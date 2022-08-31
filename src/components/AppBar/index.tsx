@@ -8,7 +8,7 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 
-export default function MenuAppBar({ title }) {
+export default function MenuAppBar({ title, ...props }) {
   const [auth, setAuth] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState(false);
 
@@ -25,7 +25,7 @@ export default function MenuAppBar({ title }) {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar {...props}>
         <Toolbar>
           <IconButton
             size="large"

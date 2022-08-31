@@ -1,5 +1,4 @@
 export default async function handler(req, res) {
-  const { method, body, headers } = req;
   const activityResponse = await fetch(`http://www.boredapi.com/api/activity/`);
   const activityResult = await activityResponse.json();
   

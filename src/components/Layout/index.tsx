@@ -44,22 +44,25 @@ const Layout = ({
             spacing={{ xs: 2 }}
             sx={{
                 height: '100%',
-                pb: 2,
                 backgroundColor: 'rgb(245, 245, 245)'
             }}
         >
-            <AppBar title={title} />
+            <AppBar title={title} position='fixed' />
             
             <Box sx={{ 
                 flexGrow: 1,
-                p: 3,
-                backgroundColor: "rgb(255, 255, 255)"
+                px: 3,
+                py: 10,
+                backgroundColor: 'rgb(255, 255, 255)'
             }}>
                 {children}
             </Box>
             
             <Box sx={{
-                backgroundColor: "rgb(255, 255, 255)"
+                position: 'fixed',
+                bottom: 0,
+                right: 0,
+                left: 0
             }}>
                 <BottomNavigation
                     showLabels
