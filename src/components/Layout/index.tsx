@@ -46,7 +46,7 @@ const Layout = ({
                 height: '100%',
                 backgroundColor: 'rgb(245, 245, 245)',
                 pt: 8,
-                pb: 9,
+                pb: 11,
                 overflow: 'auto',
             }}
         >
@@ -74,6 +74,8 @@ const Layout = ({
                     bottom: 0,
                     right: 0,
                     left: 0,
+                    backgroundColor: 'rgb(255, 255, 255)',
+                    pb: 2,
                 }}
                 boxShadow={1}
             >
