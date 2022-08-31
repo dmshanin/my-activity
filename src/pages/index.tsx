@@ -76,7 +76,7 @@ const Home: NextPage = () => {
 
 				<Stack
 					sx={{
-						mt: 4
+						mt: 3
 					}}
 					spacing={2}
 					direction='row'

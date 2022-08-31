@@ -1,4 +1,4 @@
-import { useState, SyntheticEvent } from 'react';
+import { SyntheticEvent } from 'react';
 import Box from '@mui/material/Box';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
@@ -44,26 +44,39 @@ const Layout = ({
             spacing={{ xs: 2 }}
             sx={{
                 height: '100%',
-                backgroundColor: 'rgb(245, 245, 245)'
+                backgroundColor: 'rgb(245, 245, 245)',
+                pt: 8,
+                pb: 9,
+                overflow: 'auto',
             }}
         >
-            <AppBar title={title} position='fixed' />
+            <AppBar
+                title={title}
+                position='fixed'
+                boxShadow={1}
+            />
             
-            <Box sx={{ 
-                flexGrow: 1,
-                px: 3,
-                py: 10,
-                backgroundColor: 'rgb(255, 255, 255)'
-            }}>
+            <Box
+                sx={{ 
+                    flexGrow: 1,
+                    px: 3,
+                    py: 5,
+                    backgroundColor: 'rgb(255, 255, 255)',
+                }}
+                boxShadow={1}
+            >
                 {children}
             </Box>
             
-            <Box sx={{
-                position: 'fixed',
-                bottom: 0,
-                right: 0,
-                left: 0
-            }}>
+            <Box
+                sx={{
+                    position: 'fixed',
+                    bottom: 0,
+                    right: 0,
+                    left: 0,
+                }}
+                boxShadow={1}
+            >
                 <BottomNavigation
                     showLabels
                     value={section}
@@ -71,7 +84,9 @@ const Layout = ({
                 >
                     <BottomNavigationAction title="Случайно" icon={<CasinoIcon />} />
                     <BottomNavigationAction title="План" icon={<ListAltIcon />} />
-                    <BottomNavigationAction title="Что нового" icon={<AnnouncementIcon />} />
+                    {false && (
+                        <BottomNavigationAction title="Что нового" icon={<AnnouncementIcon />} />
+                    )}
                 </BottomNavigation>
             </Box>
         </Stack>

@@ -39,6 +39,10 @@ const Plan: NextPage = () => {
 	useEffect(() => {
 		fetchActivityList();
 	}, []);
+	
+	useEffect(() => {
+		setAcceptance(false);
+	}, [ data ]);
 
     return (
         <Layout
@@ -53,7 +57,7 @@ const Plan: NextPage = () => {
                         justifyContent: 'center',
                     }}
                 >
-                    {data.map((item, index) => (
+                    {data.map((item, index, arr) => (
                         <Typography
                             key={item.key}
                             variant="h5"
@@ -79,7 +83,7 @@ const Plan: NextPage = () => {
 
                     <Stack
                         sx={{
-                            mt: 4
+                            mt: 3
                         }}
                         spacing={2}
                         direction='row'
