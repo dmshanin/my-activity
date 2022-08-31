@@ -80,7 +80,7 @@ const Home: NextPage = () => {
 					variant="contained"
 					onClick={fetchNewActivity}
 				>
-					Еще!
+					More!
 				</Button>
 			</Stack>
 		)}

@@ -1,12 +1,12 @@
 const Seo = {
     home: {
-        title: 'Случайная цель'
+        title: 'Random goal'
     },
     plan: {
-        title: 'Список целей'
+        title: 'List of goals'
     },
     news: {
-        title: 'Новости'
+        title: 'News'
     }
 }
 
