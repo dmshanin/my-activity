@@ -40,79 +40,83 @@ const Home: NextPage = () => {
 	useEffect(() => {
 		fetchNewActivity();
 	}, []);
+	
+	useEffect(() => {
+		setAcceptance(false);
+	}, [ data ]);
 
-  return (
-    <Layout
-		title={Seo.home.title}
-		section={ESection.Random}
-	>
-		{data && !loading && (
-			<Stack
-				sx={{
-					height: '100%',
-					alignItems: 'center',
-					justifyContent: 'center',
-				}}
-			>
-				<Typography
-					variant="h4"
-					gutterBottom
-					align="center"
-				>
-					{data.activity}
-					{data.link !== '' && (
-						<Link
-							href={`${data.link}`}
-							target="_blank"
-							sx={{
-								ml: 2,
-								verticalAlign: 'super'
-							}}
-						>
-							<OpenInNewIcon />
-						</Link>
-					)}
-				</Typography>
-
+	return (
+		<Layout
+			title={Seo.home.title}
+			section={ESection.Random}
+		>
+			{data && !loading && (
 				<Stack
 					sx={{
-						mt: 3
+						height: '100%',
+						alignItems: 'center',
+						justifyContent: 'center',
 					}}
-					spacing={2}
-					direction='row'
 				>
-					<Button
-						variant="contained"
-						onClick={fetchNewActivity}
+					<Typography
+						variant="h4"
+						gutterBottom
+						align="center"
 					>
-						More!
-					</Button>
+						{data.activity}
+						{data.link !== '' && (
+							<Link
+								href={`${data.link}`}
+								target="_blank"
+								sx={{
+									ml: 2,
+									verticalAlign: 'super'
+								}}
+							>
+								<OpenInNewIcon />
+							</Link>
+						)}
+					</Typography>
 
-					<Button
-						variant={acceptance ? 'contained' : 'outlined'}
-						color="success"
-						disabled={acceptance ? true : false}
-						onClick={() => setAcceptance(true)}
+					<Stack
+						sx={{
+							mt: 3
+						}}
+						spacing={2}
+						direction='row'
 					>
-						{acceptance ? 'Accepted' : 'Accept'}
-					</Button>
+						<Button
+							variant="contained"
+							onClick={fetchNewActivity}
+						>
+							More!
+						</Button>
+
+						<Button
+							variant={acceptance ? 'contained' : 'outlined'}
+							color="success"
+							disabled={acceptance ? true : false}
+							onClick={() => setAcceptance(true)}
+						>
+							{acceptance ? 'Accepted' : 'Accept'}
+						</Button>
+					</Stack>
 				</Stack>
-			</Stack>
-		)}
+			)}
 
-		{loading && (
-			<Stack
-				sx={{
-					height: '100%',
-					alignItems: 'center',
-					justifyContent: 'center',
-				}}
-			>
-				<CircularProgress />
-			</Stack>
-		)}
-    </Layout>
-  );
+			{loading && (
+				<Stack
+					sx={{
+						height: '100%',
+						alignItems: 'center',
+						justifyContent: 'center',
+					}}
+				>
+					<CircularProgress />
+				</Stack>
+			)}
+		</Layout>
+	);
 };
 
 export default Home;
