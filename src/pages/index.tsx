@@ -24,6 +24,7 @@ const fetchActivityData = async () => {
 const Home: NextPage = () => {
 	const [ data, setData ] = useState(null);
 	const [ loading, setLoading ] = useState(false);
+	const [ acceptance, setAcceptance ] = useState(false);
 	const { ESection } = Sections;
 
   	const fetchNewActivity = () => {
@@ -73,15 +74,29 @@ const Home: NextPage = () => {
 					)}
 				</Typography>
 
-				<Button
+				<Stack
 					sx={{
 						mt: 4
 					}}
-					variant="contained"
-					onClick={fetchNewActivity}
+					spacing={2}
+					direction='row'
 				>
-					More!
-				</Button>
+					<Button
+						variant="contained"
+						onClick={fetchNewActivity}
+					>
+						More!
+					</Button>
+
+					<Button
+						variant={acceptance ? 'contained' : 'outlined'}
+						color="success"
+						disabled={acceptance ? true : false}
+						onClick={() => setAcceptance(true)}
+					>
+						{acceptance ? 'Accepted' : 'Accept'}
+					</Button>
+				</Stack>
 			</Stack>
 		)}
 
