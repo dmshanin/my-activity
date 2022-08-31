@@ -39,8 +39,6 @@ const Plan: NextPage = () => {
 		fetchActivityList();
 	}, []);
 
-    data.map((item) => console.log('item', item))
-
     return (
         <Layout
             title={Seo.plan.title}
